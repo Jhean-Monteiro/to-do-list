@@ -12,10 +12,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded())
 app.use(routes);
 
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(port, () => {
-    console.log(`Servidor rodando em http://localhost:${port}`);
-  });
-}
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
 
 module.exports = app;
