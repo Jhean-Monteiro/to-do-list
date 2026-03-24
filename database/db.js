@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectToDb = () => {
   mongoose
-    .connect("removido temporariamente para fazer commit")
+    .connect(process.env.DB_URI)
     .then(() => {
       console.log("MongoDB Atlas CONECTADO!");
     })
